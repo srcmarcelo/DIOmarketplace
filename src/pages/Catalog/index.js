@@ -15,6 +15,8 @@ import {
 import {View} from 'react-native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 
+import FloatingCart from '../../components/FloatingCart';
+
 import formatValue from '../../utils/formatValue';
 
 export default function Catalog() {
@@ -61,6 +63,7 @@ export default function Catalog() {
           }}
         />
       </ProductContainer>
+      <FloatingCart />
     </Container>
   );
 }
