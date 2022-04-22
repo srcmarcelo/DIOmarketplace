@@ -1,13 +1,18 @@
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
+import {TouchableOpacity} from 'react-native';
 
 import Logo from '../../assets/logo.png';
 
 import {Container, HeaderImage} from './styles';
 
 const Header = () => {
+  const navigation = useNavigation();
   return (
     <Container>
-      <HeaderImage source={Logo} />
+      <TouchableOpacity onPress={() => navigation.navigate('Catalog')}>
+        <HeaderImage source={Logo} />
+      </TouchableOpacity>
     </Container>
   );
 };

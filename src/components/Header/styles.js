@@ -7,10 +7,9 @@ export const Container = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  padding-top: 20px;
 `;
 
 export const HeaderImage = styled(Image)`
-  height: 80px;
-  width: 80px;
+  height: 55px;
+  width: 55px;
 `;

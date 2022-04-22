@@ -2,9 +2,11 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
   bottom: 0px;
+  height: 80px;
+  width: 100%;
   position: absolute;
   background: #e83f5b;
-  padding: 0px 18px;
+  padding: 0px 10px;
   border-radius: 10px;
   align-items: center;
   flex-direction: row;
@@ -12,7 +14,7 @@ export const Container = styled.View`
 `;
 
 export const CartPricing = styled.Text`
-  padding: 20px;
+  padding: 0px 20px;
 `;
 
 export const CartTotalPrice = styled.Text`
@@ -26,7 +28,7 @@ export const CartButton = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 20px;
+  padding: 0px 20px;
 `;
 
 export const CartButtonText = styled.Text`
