@@ -1,5 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState, useEffect} from 'react';
+import {useDispatch} from 'react-redux';
 import {
   Container,
   ProductContainer,
@@ -14,6 +15,7 @@ import {
 } from './styles';
 import {View} from 'react-native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
+import * as CartActions from '../../store/modules/cart/actions';
 
 import FloatingCart from '../../components/FloatingCart';
 
@@ -23,6 +25,7 @@ import formatValue from '../../utils/formatValue';
 import Reactotron from 'reactotron-react-native';
 
 export default function Catalog() {
+  const dispatch = useDispatch();
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -37,6 +40,10 @@ export default function Catalog() {
     }
     loadProducts();
   }, []);
+
+  function handlerAddToCart(id) {
+    dispatch(CartActions.addToCartRequest(id));
+  }
 
   return (
     <Container>
@@ -55,7 +62,7 @@ export default function Catalog() {
                 <ProductTitle>{item.title}</ProductTitle>
                 <PriceContainer>
                   <ProductPrice>{formatValue(item.price)}</ProductPrice>
-                  <ProductButton onPress={() => {}}>
+                  <ProductButton onPress={() => handlerAddToCart(item.id)}>
                     <ProductButtonText>adicionar</ProductButtonText>
                     <FeatherIcon size={30} name="plus-circle" color="#d1d7e9" />
                   </ProductButton>
